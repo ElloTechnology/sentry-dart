@@ -61,6 +61,7 @@ class SentryNativeChannel
       'recordHttpBreadcrumbs': options.recordHttpBreadcrumbs,
       'captureFailedRequests': options.captureFailedRequests,
       'enableAppHangTracking': options.enableAppHangTracking,
+      'enableAppHangTrackingV2': options.enableAppHangTrackingV2,
       'connectionTimeoutMillis': options.connectionTimeout.inMilliseconds,
       'readTimeoutMillis': options.readTimeout.inMilliseconds,
       'appHangTimeoutIntervalMillis':

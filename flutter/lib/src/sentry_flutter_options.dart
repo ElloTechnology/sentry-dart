@@ -278,6 +278,13 @@ class SentryFlutterOptions extends SentryOptions {
   /// Only available on iOS and macOS.
   Duration appHangTimeoutInterval = Duration(seconds: 2);
 
+  /// Ello fork (XP-458): opt into sentry-cocoa's App Hangs V2, which detects
+  /// fatal app hangs (terminated during the freeze) and reports them on the
+  /// next launch. Forwarded to the iOS SDK as
+  /// `options.experimental.enableAppHangTrackingV2`. iOS only; ignored
+  /// elsewhere. Remove once a published release bundles sentry-cocoa >= 9.
+  bool enableAppHangTrackingV2 = false;
+
   /// Connection timeout. This will only be synced to the Android native SDK.
   Duration connectionTimeout = Duration(seconds: 5);
 

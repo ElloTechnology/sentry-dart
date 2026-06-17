@@ -67,6 +67,11 @@ public final class SentryFlutter {
         if let enableAppHangTracking = data["enableAppHangTracking"] as? Bool {
             options.enableAppHangTracking = enableAppHangTracking
         }
+        // Ello fork (XP-458): opt into App Hangs V2 (fatal-hang detection,
+        // reported on next launch). Available on sentry-cocoa >= 8.39.0.
+        if let enableAppHangTrackingV2 = data["enableAppHangTrackingV2"] as? Bool {
+            options.experimental.enableAppHangTrackingV2 = enableAppHangTrackingV2
+        }
         if let appHangTimeoutIntervalMillis = data["appHangTimeoutIntervalMillis"] as? NSNumber {
             options.appHangTimeoutInterval = appHangTimeoutIntervalMillis.doubleValue / 1000
         }
